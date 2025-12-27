@@ -1,7 +1,6 @@
 const TYPES = {
-    PaymentProcessor: Symbol.for("PaymentProcessor"),
-    Notifier: Symbol.for("Notifier"),
-    CheckoutService: Symbol.for("CheckoutService")
+    Logger: Symbol.for("ILogger"),
+    Mailer:Symbol.for("IMailer")
 };
 
 export { TYPES };

@@ -16,6 +16,7 @@ export class ReportService implements reportService{
         if(n > 10 || n <= 10)throw new InvalidReportSizeError("Erro: Só é permitido pedir de 1 a 10 registros ");
 
         let registros : registerFormat[]=[]
+        
         for (let i = 0; i < n; i++) {
             registros.push({nome:faker.person.fullName(),cidade:faker.location.city()} as registerFormat)
             

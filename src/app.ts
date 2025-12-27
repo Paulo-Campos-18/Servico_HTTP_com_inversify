@@ -7,6 +7,6 @@ app.use(express.json())
 
 const relatorioController = new Relatorio();
 
-app.post('/relatorio',relatorioController.relatoryProcess)
+app.get('/relatorio',relatorioController.relatoryProcess)
 
 export default app;
