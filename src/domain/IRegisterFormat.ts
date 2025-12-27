@@ -1,4 +1,4 @@
-export interface registerFormat{
+export interface IRegisterFormat{
     nome:string;
     cidade:string;
 }
