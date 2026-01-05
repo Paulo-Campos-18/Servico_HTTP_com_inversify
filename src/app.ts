@@ -1,4 +1,7 @@
+import 'reflect-metadata';
 import express from 'express';
+import 'dotenv/config'
+import { container } from './container/inversify.config';
 import {Relatorio} from './controllers/relatoryController'
 
 const app = express();
