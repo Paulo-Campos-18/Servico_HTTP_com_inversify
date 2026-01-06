@@ -17,7 +17,8 @@ export class RelatorioController {
     public relatoryProcess(req: Request, res: Response) {
         
         try{
-            const email = req.params.email;
+            const email = req.query.email as string;
+            console.log("email : " +email)
             if(email == undefined)throw new UndefinedEmail("Error: Email vazio ou formato inválido")
 
             this.service.genereateAndSend(email,Number(req.params.n))
