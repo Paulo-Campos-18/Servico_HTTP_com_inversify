@@ -14,7 +14,7 @@ import { IReportService } from "../domain/IReportService";
 import { ReportService } from "../services/ReportService";
 import { RelatorioController } from "../controllers/relatoryController";
 
-
+export function createContainer(): Container{
     if (!process.env.APP_ENV) {
         throw new InvalidEnvType("APP_ENV não definido. Verifique o .env");
     }
@@ -31,7 +31,8 @@ import { RelatorioController } from "../controllers/relatoryController";
         throw new InvalidEnvType("Tipo de env (ambiente) não encontrado")
     }
 
-    container.bind<IReportService>(TYPES.ReportService).to(ReportService)
-    container.bind<RelatorioController>(TYPES.RelatoryController).to(RelatorioController)
+    container.bind<IReportService>(TYPES.ReportService).to(ReportService).inSingletonScope()
+    container.bind<RelatorioController>(TYPES.RelatoryController).to(RelatorioController).inSingletonScope()
 
-    export {container};
+    return container;
+}

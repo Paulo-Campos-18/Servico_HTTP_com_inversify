@@ -1,11 +1,13 @@
 import 'reflect-metadata';
 import 'dotenv/config';
-import {container} from './container/inversify.config'
+import {createContainer} from './container/inversify.config'
 import {createApp} from './app';
 import { TYPES } from './types';
 import { RelatorioController } from './controllers/relatoryController';
 
 const PORT = Number(process.env.APP_PORT);
+
+const container = createContainer()
 const controller = container.get<RelatorioController>(TYPES.RelatoryController) 
 const app = createApp(controller)
 app.listen(PORT, () => {
