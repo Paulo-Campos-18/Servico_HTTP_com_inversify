@@ -11,8 +11,8 @@ export class WinstonConsoleLogger implements ILogger {
             level: "info",
             format: winston.format.combine(
                 winston.format.timestamp(),
-                winston.format.json(),
-                winston.format.colorize()
+                winston.format.colorize({ all: true }),
+                winston.format.simple()
             ),
             transports: [
                 new winston.transports.Console(),
