@@ -1,9 +1,9 @@
 import winston from "winston";
-import { ILogger } from "../domain/ILogger";
+import { ILogger } from "../../domain/ILogger";
 import { injectable } from "inversify";
 
 @injectable()
-export class WinstonFileLogger implements ILogger {
+export class WinstonConsoleLogger implements ILogger {
     private logger: winston.Logger;
 
     constructor() {
@@ -11,10 +11,11 @@ export class WinstonFileLogger implements ILogger {
             level: "info",
             format: winston.format.combine(
                 winston.format.timestamp(),
-                winston.format.json()
+                winston.format.json(),
+                winston.format.colorize()
             ),
             transports: [
-                new winston.transports.File({ filename: "app.log" }),
+                new winston.transports.Console(),
             ],
         });
     }

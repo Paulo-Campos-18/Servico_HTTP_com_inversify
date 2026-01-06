@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
-import { ILogger } from '../domain/ILogger';
-import { IMailer } from '../domain/IMailer'
-import { TYPES } from '../types';
+import { ILogger } from '../../domain/ILogger';
+import { IMailer } from '../../domain/IMailer'
+import { TYPES } from '../../types';
 import { inject, injectable } from 'inversify';
 
 let transporter: nodemailer.Transporter | null = null;
@@ -39,7 +39,7 @@ export class EtheralMailProvider implements IMailer {
             // use este link para visualizar no Ethereal
             this.logger.info(`Email enviado: ${url}`);
         } else {
-            this.logger.info("Email enviado mas url de pré-visualização indisponível");
+            this.logger.warn("Email enviado mas url de pré-visualização indisponível");
         }
     }
 }

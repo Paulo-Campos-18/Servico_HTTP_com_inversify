@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
-import { ILogger } from '../domain/ILogger';
-import { IMailer } from '../domain/IMailer'
-import { TYPES } from '../types';
+import { ILogger } from '../../domain/ILogger';
+import { IMailer } from '../../domain/IMailer'
+import { TYPES } from '../../types';
 import { inject, injectable } from 'inversify';
 
 let transporter: nodemailer.Transporter | null = null;
