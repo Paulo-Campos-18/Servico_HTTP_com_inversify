@@ -1,2 +1,5 @@
 {"level":"error","message":"Erro: Só é permitido pedir de 1 a 10 registros ","timestamp":"2026-01-06T20:48:31.921Z"}
 {"level":"error","message":"Error: Email vazio ou formato inválido","timestamp":"2026-01-06T20:48:46.988Z"}
+{"level":"info","message":"Iniciando envio de email","timestamp":"2026-01-06T21:42:09.698Z"}
+{"level":"info","message":"Iniciando envio de email","timestamp":"2026-01-06T21:42:30.255Z"}
+{"level":"info","message":"Email enviado para pamcampos05@gmail.com com sucesso","timestamp":"2026-01-06T21:42:34.086Z"}
