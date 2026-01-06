@@ -28,12 +28,15 @@ export class RelatorioController {
         }
         catch(error : any){
             if(error instanceof UndefinedEmail){
+                this.logger.error(error.message)
                 return res.status(400).json({error: error.message})
             }
             if(error instanceof InvalidReportSizeError){
+                this.logger.error(error.message)
                 return res.status(400).json({error: error.message})
             }
             if(error instanceof InvalidEnvType){
+                this.logger.error(error.message)
                 return res.status(500).json({error: error.message})
             }
 
