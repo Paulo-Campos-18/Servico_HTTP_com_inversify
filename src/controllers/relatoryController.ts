@@ -3,16 +3,15 @@ import { TYPES } from '../types';
 import { inject, injectable } from 'inversify';
 import { ILogger } from '../domain/ILogger';
 import { IReportService } from '../domain/IReportService';
-import { IMailer } from '../domain/IMailer';
 import { InvalidReportSizeError, UndefinedEmail } from '../errors/EmailErrors';
 import { InvalidEnvType } from '../errors/ContainerErrors';
 
-export class Relatorio {
+@injectable()
+export class RelatorioController {
 
     constructor(
         @inject(TYPES.Logger) private logger: ILogger,
         @inject(TYPES.ReportService) private service: IReportService,
-        @inject(TYPES.Mailer) private mailer: IMailer
     ) { }
 
     public relatoryProcess(req: Request, res: Response) {
@@ -39,7 +38,5 @@ export class Relatorio {
             this.logger.error(error.message)
             return res.status(500).json({error: error.message})
         }
-
-
     }
 }

@@ -1,15 +1,13 @@
 import express from 'express';
-import { container } from './container/inversify.config';
-import {Relatorio} from './controllers/relatoryController'
-import { ReportService } from './services/ReportService';
-import { TYPES } from './types';
 
-const app = express();
+import { RelatorioController } from './controllers/relatoryController';
 
-app.use(express.json())
+export function createApp(controller: RelatorioController) {
+  const app = express();
 
-const relatorioController = container.get<ReportService>(TYPES.ReportService)
+  app.use(express.json());
 
-app.get('/relatorio/:n',relatorioController.relatoryProcess)
+  app.get('/relatorio/:n', controller.relatoryProcess);
 
-export default app;
+  return app;
+}
