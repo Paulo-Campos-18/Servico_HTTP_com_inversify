@@ -55,7 +55,7 @@ O servidor iniciará em `http://localhost:3000`.
    http://localhost:3000/relatorio/n?email=email_de_destino
 ```
 <li>Sendo n a quantidade de linhas do relatório a ser enviado.
-<li>E email_de_destino o email de quem irá receber o relatório.
+<li>E <code>email_de_destino</code> o email de quem irá receber o relatório.
 
 ## Alterando ambiente
 <li>No .env criado nos passos anteriores existe <code>APP_ENV=dev</code>
