@@ -62,5 +62,8 @@ O servidor iniciará em `http://localhost:3000`.
 <li>Use <code>APP_ENV=dev</code> para exibir o logger no console e cirar/enviar emails etheral
 <li> Use <code>APP_ENV=prod</code> para salvar loggs no arquivo <code>app.log</code> e enviar emails reais via <strong>Gmail</strong>
 
+## Rodando testes
+<li>Para rodar os teste basta usar o seguinte comando no terminal <code>npm run test</code></li>
+
 ## Notas
 <li>No momento apenas gmail é suportado, seria preciso trocar <code>SMTP_HOST e SMTP_PORT</code> para usar outro.
